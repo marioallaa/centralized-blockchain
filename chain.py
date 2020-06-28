@@ -9,7 +9,7 @@ class Chain:
         self.createFirstBlock()
 
     def createFirstBlock(self):
-        b = Block(0, '', time.time(), '')
+        b = Block(0, 'Genesis', time.time(), 'Ups')
         self.chain.append(b)
 
     def sameLevelAs(self, b: Block):
@@ -35,7 +35,6 @@ class Chain:
             timestamp=time.time(),
             prevBlockHash=self.lastNode.hashMe)
         return self.appendBlock(b)
-
 
     @property
     def lastNode(self):

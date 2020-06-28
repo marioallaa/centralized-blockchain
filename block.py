@@ -13,11 +13,11 @@ class Block:
 
     def increaseNonce(self):
         self.nonce += 1
-
+    @property
     def stringifyBlock(self):
         return json.dumps(self.__dict__, sort_keys=True)
 
     @property
     def hashMe(self):
-        return sha256(self.stringifyBlock().encode()).hexdigest()
+        return sha256(self.stringifyBlock.encode()).hexdigest()
 
